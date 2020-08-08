@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "C:\\Users\\atlantech\\Documents\\Arduino\\libraries\\ArduinoMqttClient\\src",
+                "C:\\Users\\atlantech\\Documents\\Arduino\\libraries\\ArduinoECCX08\\src",
+                "C:\\Users\\atlantech\\Documents\\Arduino\\libraries\\ArduinoBearSSL\\src",
+                "C:\\Users\\atlantech\\Documents\\Arduino\\libraries\\SimpleDHT",
+                "C:\\Users\\atlantech\\Documents\\Arduino\\libraries\\ele400",
+                "C:\\Users\\atlantech\\Documents\\Arduino\\libraries\\STM32duino_VL53L1X\\src"
+                "C:\\Users\\atlantech\\Documents\\Arduino\\libraries\\PubSubClient\\src",
+                "C:\\Users\\atlantech\\Documents\\Arduino\\libraries\\RTCZero\\src",
+                "C:\\Users\\atlantech\\Documents\\Arduino\\libraries\\WiFiNINA\\src",
+                "C:\\Users\\atlantech\\Documents\\Arduino\\libraries\\FlashStorage\\src",
+                "C:\\Users\\atlantech\\Documents\\Arduino\\libraries\\SparkFun_VL53L1X_4m_Laser_Distance_Sensor\\src",
+                "C:\\Users\\atlantech\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\**",
+                "C:\\Users\\atlantech\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.6\\**",
+                "d:\\PROG\\ele400\\integ\\inc",
+                "d:\\PROG\\ele400\\integ\\**",
+                "d:\\PROG\\ele400\\integ"
+            ],
+            "forcedInclude": [
+                "C:\\Users\\atlantech\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.8.6\\cores\\arduino\\Arduino.h"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

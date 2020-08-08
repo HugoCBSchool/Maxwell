@@ -1,0 +1,5 @@
+--find-links wheelhouse
+Django==2.1.7
+django-pyodbc-azure==2.1.0.0
+pyodbc==4.0.17
+whitenoise

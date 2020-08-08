@@ -1,0 +1,56 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<section id="showcase"><div class="container"><h1>
+        Statistique quotidienne</h1></div></section>
+<div class="container">
+    <section id="alone">
+        <h3>Pourcentage de personne qui mettent du désinfectant</h3>
+        <p>{{ class_percent }}</p>
+    </section>
+    <section class="main">
+        <h3>Nombre de personne qui ont mis du désinfectant aujourd'hui</h3>
+        <!-- Tableau -->
+        <table class="tableau">
+            <thead><tr>
+                <th>Salle de classe</th>
+                <th>Nombre de personnes</th>
+            </tr></thead>
+            <tbody>
+            {% block people_count_table %}
+            {% for classroom in classrooms %}
+                <tr>
+                    <td>{{ classroom.class_name }}</td>
+                    <td>{{ classroom.current_nb }}</td>
+                </tr>
+            {% endfor %}
+            {% endblock people_count_table %}
+            </tbody>
+        </table>
+        <br>
+    </section>
+    <aside class="sidebar">
+        <h3>Nombre de personne qui sont rentrée dans la classe aujourdh'hui</h3>
+        <!-- Tableau -->
+        <table class="tableau2">
+            <thead>
+                <tr>
+                    <th>Salle de classe</th>
+                    <th>Nombre de personne</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% block class_entry_table %}
+            {% for classroom in classrooms %}
+                <tr>
+                    <td>{{ classroom.class_name}}</td>
+                    <td>{{ classroom.total_nb }}</td>
+                </tr>
+            {% endfor %}
+            {% endblock class_entry_table %}
+            </tbody>
+        </table>
+        <br>
+    </aside>
+</div>
+{% endblock content %}
+

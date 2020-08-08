@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<meta http-equiv="Refresh" content="5">
+<html>
+    {# Make modifiable head elements #}
+    <head>
+        <title>{% block title %}ETS - COVID{% endblock title %}</title>
+        {% block head_meta %}
+            {% block head_meta_charset %}
+                <meta http-equiv="Content-Type"
+                      content="text/html; charset=utf-8" />
+            {% endblock head_meta_charset %}
+            {% block head_meta_contentlanguage %}
+                <meta http-equiv="Content-Language" value="en-US" />
+            {% endblock head_meta_contentlanguage %}
+            {% block head_meta_viewport %}
+                <meta name="viewport"
+                      content="width=device-width, initial-scale=1.0">
+            {% endblock head_meta_viewport %}
+        {% endblock head_meta %}
+        {% block head_css %}
+            {% block head_css_site %}
+                <link rel="stylesheet"
+                      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+                <link rel="stylesheet"
+                      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+                <link href="{% static 'css/main.css' %}"
+                      rel="stylesheet" 
+                      media="screen">
+            {% endblock head_css_site %}
+            {% block head_css_section %}{% endblock head_css_section %}
+            {% block head_css_page %}{% endblock head_css_page %}
+        {% endblock head_css %}
+    </head>
+    <body>
+        {# Navigation Menu #}
+        <header>
+            <div class="container clearfix">
+
+                <div class="navbar-wrapper">
+                    <div class="container">
+                        <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar_whole">
+                                <a class="navbar-brand navbar-right" href="{% url 'home' %}">
+                                    <!--Insert the file name of your brand image below after the 'img'-->
+                                    <img class="img-responsive" src="{% static 'images/ht_logo.bmp' %}">
+                                </a>
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <!--Below is the top-left hand side of the screen where you usually see a company/project name and a logo-->
+                                <!--The next line sends the user back to the home page-->
+                            </div>
+
+                            <div id="navbar" class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <!--Below is where you put the rest of the links to the pages you've created. Please reference your own models
+                                     in Django.-->
+                                    <li>{% block nav_about %}<a href="{% url 'about' %}">
+                                        À propos de nous</a>{% endblock nav_about %}
+                                    </li>
+                                    <li>{% block nav_info %}<a href="{% url 'information' %}">
+                                        Information en temps réelle</a>{% endblock nav_info %}
+                                    </li>
+                                    <li>{% block nav_daily %}<a href="{% url 'daily' %}">
+                                        Statistiques Quotidiennes</a>{% endblock nav_daily %}
+                                    </li>
+                                    <li>{% block nav_hebdo %}<a href="{% url 'hebdo' %}">
+                                        Statistiques Hebdomadaires</a>{% endblock nav_hebdo %}
+                                    </li>
+                                </ul>   
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        {# The Document Body #}
+        <div id="site-wrapper">
+            {% block content %}
+                if you see this, something is wrong!
+            {% endblock content %}
+        </div>
+        {# The Footer #}
+        <div class="footer">
+            <footer id="main-footer">
+                <p> Copyright &copy; 2020 maxwell </p>
+            </footer>
+        </div>
+    </body>
+    {# Set of blocks that can be used to display JavaScript files #}
+    {% block footer_javascript %}
+        {% block footer_javascript_site %}
+            <script src="{% static 'js/app.js' %}"></script>
+            <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    {% block javascript %}{% endblock %}
+        {% endblock footer_javascript_site %}
+        {% block footer_javascript_section %}{% endblock footer_javascript_section %}
+        {% block footer_javascript_page %}{% endblock footer_javascript_page %}
+    {% endblock footer_javascript %}
+</html>

@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<section id="showcase">
+    <div class="container">
+        <h1>Information en temps réelle</h1>
+    </div>
+</section>
+<div class="container">
+    <section class="main">
+        <h1>Nombre de personne dans les classes</h1>
+        <!-- Tableau -->
+        <table class="tableau">
+            <thead>
+                <tr>
+                    <th>Salle de classe</th>
+                    <th>Nombre de personne</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% block class_nb_table %}
+            {% for classroom in classrooms %}
+                <tr>
+                    <td>{{ classroom.class_name}}</td>
+                    <td>{{ classroom.total_nb }}</td>
+                </tr>
+            {% endfor %}
+            {% endblock class_nb_table %}
+            </tbody>
+        </table>
+        <br>
+    </section>
+
+    <aside class="sidebar">
+        <h1>Quantité de désinfectant disponible</h1>
+        <p>{{qt_desinfectant}}</p>
+        <a class="button" href="">Remplir</a>
+    </aside>
+</div>
+{% endblock content %}
+

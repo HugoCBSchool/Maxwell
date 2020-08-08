@@ -1,0 +1,13 @@
+{
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "IoTHubMessage",
+      "direction": "in",
+      "eventHubName": "mxwl-iot-hub",
+      "connection": "IOT_ENDPOINT",
+      "cardinality": "many",
+      "consumerGroup": "$Default"
+    }
+  ]
+}

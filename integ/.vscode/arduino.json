@@ -1,0 +1,6 @@
+{
+    "sketch": "integ_vl.ino",
+    "board": "arduino:samd:mkrwifi1010",
+    "port": "COM3",
+    "programmer": "ArduinoISP"
+}
